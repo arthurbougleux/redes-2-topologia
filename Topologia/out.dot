@@ -1,0 +1,72 @@
+strict digraph "" {
+	graph [bgcolor=seashell];
+	node [label="\N"];
+	subgraph cluster_US {
+		graph [color=springgreen4,
+			label="United States"
+		];
+		"192.168.0.1"	[label="INTERNET ASSIGNED NUMBERS AUTHORITY"];
+		"10.81.1.1"	[label="INTERNET ASSIGNED NUMBERS AUTHORITY"];
+		"10.11.100.160"	[label="INTERNET ASSIGNED NUMBERS AUTHORITY"];
+		"10.81.1.1" -> "10.11.100.160"	[color="navy:red:navy",
+			minlen=-0.9924520928397214];
+		"10.10.100.228"	[label="INTERNET ASSIGNED NUMBERS AUTHORITY"];
+		"10.11.100.160" -> "10.10.100.228"	[color="navy:red:navy",
+			minlen=-6.907755278982137];
+		"172.16.1.33"	[label="INTERNET ASSIGNED NUMBERS AUTHORITY"];
+		"10.10.100.228" -> "172.16.1.33"	[color="navy:red:navy",
+			minlen=0.46331464109493947];
+		"100.64.193.82"	[label="INTERNET ASSIGNED NUMBERS AUTHORITY"];
+		"100.64.193.170"	[label="INTERNET ASSIGNED NUMBERS AUTHORITY"];
+		"100.64.193.82" -> "100.64.193.170"	[color="navy:red:navy",
+			minlen=0.5319998589973984];
+		"172.69.55.69"	[label="CLOUDFLARE, INC."];
+		"172.69.55.74"	[label="CLOUDFLARE, INC."];
+		"172.69.55.69" -> "172.69.55.74"	[color="navy:red:navy",
+			minlen=-0.33991147736872496];
+		"169.254.241.7"	[label="INTERNET ASSIGNED NUMBERS AUTHORITY"];
+		"172.69.55.69" -> "169.254.241.7"	[color="navy:red:navy",
+			minlen=4.907425550289333];
+		"172.69.55.74" -> "172.69.55.69"	[color="navy:red:navy",
+			minlen=0.5017848791138415];
+		"172.69.55.74" -> "172.69.55.74"	[color="navy:red:navy",
+			minlen=-6.907755278982137];
+		"172.69.55.73"	[label="CLOUDFLARE, INC."];
+		"172.69.55.74" -> "172.69.55.73"	[color="navy:red:navy",
+			minlen=-6.907755278982137];
+		"172.69.55.74" -> "169.254.241.7"	[color="navy:red:navy",
+			minlen=4.919679177143553];
+		"172.69.55.73" -> "169.254.241.7"	[color="navy:red:navy",
+			minlen=4.919715683841927];
+		"156.146.101.211"	[label="UNITAS GLOBAL"];
+		"169.254.241.7" -> "156.146.101.211"	[color="navy:red:navy",
+			minlen=-6.907755278982137];
+	}
+	subgraph cluster_UY {
+		graph [color=springgreen4,
+			label=Uruguay
+		];
+		"170.238.187.4"	[label="LATIN AMERICAN AND CARIBBEAN IP ADDRESS REGIONAL REGISTRY"];
+		"170.238.234.10"	[label="LATIN AMERICAN AND CARIBBEAN IP ADDRESS REGIONAL REGISTRY"];
+		"170.238.233.182"	[label="LATIN AMERICAN AND CARIBBEAN IP ADDRESS REGIONAL REGISTRY"];
+	}
+	subgraph cluster_BR {
+		graph [color=springgreen4,
+			label=Brazil
+		];
+		"177.87.27.78"	[label="177.87.27.78"];
+	}
+	Home -> "192.168.0.1"	[color="navy:red:navy"];
+	"192.168.0.1" -> "170.238.187.4"	[color="navy:red:navy",
+		minlen=0.5380516100195822];
+	"170.238.187.4" -> "10.81.1.1"	[color="navy:red:navy",
+		minlen=0.34783599527152825];
+	"172.16.1.33" -> "170.238.234.10"	[color="navy:red:navy",
+		minlen=1.4161767356017603];
+	"170.238.234.10" -> "100.64.193.82"	[color="navy:red:navy",
+		minlen=-1.575036485716773];
+	"177.87.27.78" -> "172.69.55.69"	[color="navy:red:navy",
+		minlen=-6.907755278982137];
+	"177.87.27.78" -> "172.69.55.74"	[color="navy:red:navy",
+		minlen=-6.907755278982137];
+}
